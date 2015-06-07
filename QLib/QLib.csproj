@@ -63,6 +63,9 @@
     <Compile Include="Utils\UnixTime.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\QTrader\QTrader.licenseheader">
+      <Link>QTrader.licenseheader</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
