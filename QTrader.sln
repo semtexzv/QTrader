@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QTrader", "QTrader\QTrader.csproj", "{87857DAE-276F-42B1-AB5C-99A6197C4D77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitstamp", "Bitstamp\Bitstamp.csproj", "{2ABD43A2-B141-44CA-A366-A00E78BDAEC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLib", "QLib\QLib.csproj", "{2C7D4744-B331-4502-9687-B52873232710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87857DAE-276F-42B1-AB5C-99A6197C4D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87857DAE-276F-42B1-AB5C-99A6197C4D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87857DAE-276F-42B1-AB5C-99A6197C4D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87857DAE-276F-42B1-AB5C-99A6197C4D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ABD43A2-B141-44CA-A366-A00E78BDAEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ABD43A2-B141-44CA-A366-A00E78BDAEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ABD43A2-B141-44CA-A366-A00E78BDAEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ABD43A2-B141-44CA-A366-A00E78BDAEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C7D4744-B331-4502-9687-B52873232710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C7D4744-B331-4502-9687-B52873232710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C7D4744-B331-4502-9687-B52873232710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C7D4744-B331-4502-9687-B52873232710}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
