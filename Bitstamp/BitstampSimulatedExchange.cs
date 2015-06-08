@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace Bitstamp
 {
-    class BitstampSimulatedExchange: ISimulatedExchange
+    class BitstampSimulatedExchange : IExchange
     {
 
         public BitstampSimulatedExchange()
@@ -69,13 +69,16 @@ namespace Bitstamp
         {
             get { return new UserControl1(); }
         }
-        public override List<Candle> History
+        public override List<Candle> History()
         {
-            get { return Bitstamp.candles[Intervals.GetInterval(Interval)]; }
+            lock (Bitstamp.candles)
+            {
+                return Bitstamp.candles[Intervals.GetInterval(Interval)];
+            }
         }
-        public override ISimulatedExchange SimulatedExchange
+        public override IExchange SimulatedExchange
         {
-            get { return this; }
+            get { return new BitstampSimulatedExchange(); }
         }
         public override float USD
         {
@@ -84,10 +87,6 @@ namespace Bitstamp
         public override float BTC
         {
             get { return BTC_; }
-        }
-        public override ISimulatedExchange New()
-        {
-            return new BitstampSimulatedExchange();
         }
         public override int Interval
         {

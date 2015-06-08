@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\QLib.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -48,7 +49,7 @@
     <Compile Include="Evolution\Chromosome.cs" />
     <Compile Include="Evolution\IntArrayChromosome.cs" />
     <Compile Include="Evolution\Population.cs" />
-    <Compile Include="ExponentialMovingAverage.cs" />
+    <Compile Include="Ema.cs" />
     <Compile Include="IBot.cs" />
     <Compile Include="IExchange.cs" />
     <Compile Include="Intervals.cs" />
@@ -56,7 +57,7 @@
     <Compile Include="ITrade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="SimpleMovingAverage.cs" />
+    <Compile Include="Sma.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\Rand.cs" />

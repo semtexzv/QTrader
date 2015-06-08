@@ -73,7 +73,7 @@ namespace QLib
                 population = new Population(20, QTrader.Config, Fitness);
             }
         }
-        private static ISimulatedExchange Exchange;
+        private static IExchange Exchange;
         private static IBot TestedBot;
         static void QTrader_OnExchangeChanged()
         {
@@ -100,7 +100,6 @@ namespace QLib
         {
             reset.Reset();
         }
-        static int i = 0;
         private static Chromosome oldBest;
         public static void Run()
         {
@@ -142,9 +141,9 @@ namespace QLib
             {
 
                 IBot bot = TestedBot.New(c);
-                ISimulatedExchange ex = Exchange.New();
+                IExchange ex = Exchange.SimulatedExchange;
                 ex.Interval = (bot.GetDesiredInterval());
-                IEnumerable<Candle> candles = ex.History;
+                IEnumerable<Candle> candles = ex.History();
                 bot.DisableTrading();
                 foreach (Candle cc in candles) 
                 {

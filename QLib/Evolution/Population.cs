@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 
 namespace QLib
 {
+
     public class Population
     {
         public Func<Chromosome, double> fitnessFunction;

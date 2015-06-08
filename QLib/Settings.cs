@@ -20,12 +20,15 @@ using System.IO;
 using Newtonsoft.Json;
 namespace QLib
 {
-    public sealed class Settings
+    /// <summary>
+    /// Simple settings class, stores data using Json.net serialization
+    /// </summary>
+    public class Settings
     {
-        string filename;
+        public string Filename;
         public Settings(string filename)
         {
-            this.filename = filename;
+            this.Filename = filename;
             Load(filename);
         }
         private  Dictionary<string, string> values = new Dictionary<string, string>();
@@ -51,7 +54,7 @@ namespace QLib
         }
         public void Save()
         {
-            Save(filename);
+            Save(Filename);
         }
         public void Save(string filename)
         {

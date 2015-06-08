@@ -18,6 +18,10 @@ using System.Threading.Tasks;
 
 namespace QLib
 {
+    /// <summary>
+    /// Holds all trade data from defined interval, Most important is Close price and timestamp
+    /// Will be used to visualize trade data
+    /// </summary>
     public class Candle
     {
         public float High { get; internal set; }

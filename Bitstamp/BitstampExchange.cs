@@ -36,12 +36,17 @@ namespace Bitstamp
             get { return new  UserControl1(); }
         }
 
-        public override List<Candle> History
+        public override List<Candle> History()
         {
-            get { return Bitstamp.candles[Intervals.GetInterval(Interval)]; }
+            // We are accessing candle data from 2 different threads, modifications ae sparse,
+            // but collisions can occur
+            lock(Bitstamp.candles)
+            {
+                return Bitstamp.candles[Intervals.GetInterval(Interval)];
+            }
         }
 
-        public override ISimulatedExchange SimulatedExchange
+        public override IExchange SimulatedExchange
         {
             get { return new BitstampSimulatedExchange(); }
         }

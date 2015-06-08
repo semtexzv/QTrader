@@ -18,6 +18,10 @@ using System.Threading.Tasks;
 
 namespace QLib
 {
+    /// <summary>
+    /// Intervals between candles
+    /// Your exchange must support these values, and Your bot can't request any other interval
+    /// </summary>
     public static class Intervals
     {
         public static readonly int[] Values = new int[] { 600, 1800, 3600, 7200, 10800, 21600, 43200, 86400, 172800 };

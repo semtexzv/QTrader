@@ -19,14 +19,34 @@ using System.Threading.Tasks;
 
 namespace QLib
 {
+    /// <summary>
+    /// Used for evolutionary programming, Will be serialized and deserialized using Json.net
+    /// </summary>
     public abstract class Chromosome : IComparable
     {
         [JsonIgnore]
         public double Fitness = -1;
+        /// <summary>
+        /// Fills this chromosme with new random data
+        /// </summary>
         public abstract void Generate();
+        /// <summary>
+        /// Returns new random chromosome
+        /// </summary>
         public abstract Chromosome New();
+        /// <summary>
+        /// Creates new instance of chromosome, with same genes as this one
+        /// </summary>
         public abstract Chromosome Clone();
+        /// <summary>
+        /// Mutation, Changing one or few genes is recommended
+        /// </summary>
         public abstract void Mutate();
+        /// <summary>
+        /// Crossover between 2 chromosomes, serves similar purpose as generating offspring,
+        /// Reccomended exhchanging one or several genes between chromosomes
+        /// </summary>
+        /// <param name="other"></param>
         public abstract void Crossover(Chromosome other);
         public void Evaluate(Func<Chromosome, double> func)
         {
@@ -38,5 +58,12 @@ namespace QLib
 
             return (Fitness == f) ? 0 : (Fitness < f) ? 1 : -1;
         }
+        /// <summary>
+        /// Used to compare chromosomes to remove duplicities from population
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public abstract bool Equals(object obj);
+        public abstract int GetHashCode();
     }
 }

@@ -19,6 +19,10 @@ using System.Windows.Forms;
 
 namespace QLib
 {
+
+    /// <summary>
+    /// WIP
+    /// </summary>
     public interface IPlugin
     {
         string Name { get; }

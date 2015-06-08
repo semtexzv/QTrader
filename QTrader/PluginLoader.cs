@@ -26,7 +26,6 @@ namespace QLib
         public static List<IPlugin> plugins = new List<IPlugin>();
         public static List<IExchange> exchanges = new List<IExchange>();
         public static List<IBot> bots = new List<IBot>();
-        public static List<ISimulatedExchange> SimulatedExchanges = new List<ISimulatedExchange>();
         internal static void Load()
         {
             string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -52,15 +51,7 @@ namespace QLib
                     }
                 }
             }
-            foreach (IExchange ex in exchanges)
-            {
-                Type t = typeof(ISimulatedExchange);
-                if (t.IsAssignableFrom(ex.GetType()))
-                {
-                    SimulatedExchanges.Add((ISimulatedExchange)ex);
-                }
-
-            }
+           
         }
     }
 }

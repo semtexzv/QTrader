@@ -53,7 +53,7 @@ namespace QLib
             }
         }
 
-        internal static ISimulatedExchange SimulatedExchange
+        internal static IExchange SimulatedExchange
         {
             get
             {
@@ -150,13 +150,12 @@ namespace QLib
                 _instance = Bot.New(Config);
                 _instance.DisableTrading();
                 Exchange.Interval = _instance.GetDesiredInterval();
-                lock (Exchange.History)
+                List<Candle> hist = Exchange.History();
+                foreach (Candle t in hist)
                 {
-                    foreach (Candle t in Exchange.History)
-                    {
-                        _instance.OnCandle(Exchange, t);
-                    }
+                    _instance.OnCandle(Exchange, t);
                 }
+                
                 _instance.EnableTrading();
                 _running = true;
                 Exchange.OnCandle += Exchange_OnCandle;

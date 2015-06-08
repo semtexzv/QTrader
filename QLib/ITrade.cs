@@ -18,6 +18,9 @@ using System.Threading.Tasks;
 
 namespace QLib
 {
+    /// <summary>
+    /// Used as a bridge between candles and trades, you can implement your own conversion between the two.
+    /// </summary>
     public interface ITrade
     {
          int Timestamp();
